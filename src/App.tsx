@@ -46,7 +46,7 @@ function App() {
     if (selectedImage === undefined) {
       return (
         <div>
-          <p>Vali pilt...</p>
+          <p></p>
         </div>
       );
     }
