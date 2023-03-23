@@ -1,9 +1,9 @@
 {
   "name": "pajo",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1",
   "type": "module",
-  "homepage": "https://TanelMr.github.io/labelmaker",
+  "main": "app.tsx",
+  "homepage": "https://tanelmr.github.io/labelmaker/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
