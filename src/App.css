@@ -16,6 +16,9 @@ html {
   flex: 1;
 }
 
+.hidden {
+  visibility: hidden;
+}
 .A4Paper {
   width: 297mm;
   height: 210mm;

@@ -45,8 +45,8 @@ function App() {
   const SelectedFile = () => {
     if (selectedImage === undefined) {
       return (
-        <div>
-          <p></p>
+        <div className={"hidden"}>
+          <p>Dummy text</p>
         </div>
       );
     }
