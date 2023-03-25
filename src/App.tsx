@@ -26,7 +26,7 @@ function App() {
           key={i}
           src={selectedImage}
           alt="Valitud on ebasobiv fail või jäi fail valimata!"
-          style={{ height: "104.5mm", width: "74.25mm" }}
+          style={{ height: "105mm", width: "74.25mm" }}
         />
       );
     }
