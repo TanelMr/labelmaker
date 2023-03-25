@@ -23,6 +23,7 @@ html {
   width: 297mm;
   height: 210mm;
   margin: auto;
+  padding: 2mm;
 }
 
 .logoContainer,
