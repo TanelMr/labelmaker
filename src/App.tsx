@@ -5,6 +5,11 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(undefined);
   const [fileName, setFileName] = useState(undefined);
   const [uploadClicked, setUploadClicked] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("tagumised_sildid");
+
+  const handleSelectChange = (event: any) => {
+    setSelectedOption(event.target.value);
+  };
 
   const handleFileInputChange = (event: any) => {
     const file = event.target.files[0];
@@ -20,21 +25,43 @@ function App() {
 
   const RenderImages = () => {
     const images = [];
-    for (let i = 0; i < 8; i++) {
-      images.push(
-        <img
-          key={i}
-          src={selectedImage}
-          alt="Valitud on ebasobiv fail või jäi fail valimata!"
-          style={{ height: "104.5mm", width: "74.25mm" }}
-        />
-      );
+    switch (selectedOption) {
+      case "tagumised_sildid":
+        for (let i = 0; i < 8; i++) {
+          images.push(
+            <img
+              key={i}
+              src={selectedImage}
+              alt="Valitud on ebasobiv fail või jäi fail valimata!"
+              style={{ height: "104.5mm", width: "74.25mm" }}
+            />
+          );
+        }
+        return (
+          <div className={"A4Paper"}>
+            <div className={"imagesContainer"}>{images}</div>
+          </div>
+        );
+
+      case "teekottide_sildid":
+        for (let i = 0; i < 8; i++) {
+          images.push(
+            <img
+              key={i}
+              src={selectedImage}
+              alt="Valitud on ebasobiv fail või jäi fail valimata!"
+              style={{ height: "52.5mm", width: "148.5mm" }}
+            />
+          );
+        }
+        return (
+          <div className={"A4Paper"}>
+            <div className={"imagesContainerTeabags"}>{images}</div>
+          </div>
+        );
+      default:
+        return null;
     }
-    return (
-      <div className={"A4Paper"}>
-        <div className={"imagesContainer"}>{images}</div>
-      </div>
-    );
   };
 
   const DeleteImage = () => {
@@ -46,7 +73,7 @@ function App() {
     if (selectedImage === undefined) {
       return (
         <div className={"hidden"}>
-          <p>Dummy text</p>
+          <span>Placeholder</span>
         </div>
       );
     }
@@ -74,7 +101,19 @@ function App() {
               accept="image/*"
               onChange={handleFileInputChange}
             />
+
             <SelectedFile />
+            <div>
+              <label htmlFor={"optionSelect"}>Vali sildi tüüp:</label>
+              <select
+                className={"optionSelect"}
+                id={"optionSelect"}
+                onChange={handleSelectChange}
+              >
+                <option value="tagumised_sildid">Tagumised sildid</option>
+                <option value="teekottide_sildid">Teekottide sildid</option>
+              </select>
+            </div>
             <div>
               <button
                 className={"mainButton"}

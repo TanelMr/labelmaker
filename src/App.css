@@ -17,6 +17,7 @@ html {
 }
 
 .hidden {
+  height: 3.2em;
   visibility: hidden;
 }
 .A4Paper {
@@ -24,6 +25,16 @@ html {
   height: 210mm;
   margin: auto;
   padding: 2mm;
+}
+
+.optionSelect,
+option {
+  height: 2.5em;
+  margin-left: 1em;
+  margin-bottom: 3em;
+  border: none;
+  border-radius: 5%;
+  font-family: "Roboto Mono", sans-serif;
 }
 
 .logoContainer,
@@ -45,6 +56,11 @@ html {
 .imagesContainer {
   display: grid;
   grid-template-columns: auto auto auto auto;
+}
+
+.imagesContainerTeabags {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 footer {
