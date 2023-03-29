@@ -110,7 +110,9 @@ function App() {
                 id={"optionSelect"}
                 onChange={handleSelectChange}
               >
-                <option value="tagumised_sildid">Tagumised sildid</option>
+                <option value="tagumised_sildid">
+                  Teepakkide tagumised sildid
+                </option>
                 <option value="teekottide_sildid">Teekottide sildid</option>
               </select>
             </div>
