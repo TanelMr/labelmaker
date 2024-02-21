@@ -5,7 +5,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(undefined);
   const [fileName, setFileName] = useState(undefined);
   const [uploadClicked, setUploadClicked] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("tagumised_sildid");
+  const [selectedOption, setSelectedOption] = useState("teekottide_tagumised_sildid");
 
   const handleSelectChange = (event: any) => {
     setSelectedOption(event.target.value);
@@ -26,7 +26,7 @@ function App() {
   const RenderImages = () => {
     const images = [];
     switch (selectedOption) {
-      case "tagumised_sildid":
+      case "teekottide_tagumised_sildid":
         for (let i = 0; i < 8; i++) {
           images.push(
             <img
@@ -39,11 +39,11 @@ function App() {
         }
         return (
           <div className={"A4Paper"}>
-            <div className={"imagesContainer"}>{images}</div>
+            <div className={"teekottide_tagumised_sildid"}>{images}</div>
           </div>
         );
 
-      case "teekottide_sildid":
+      case "pakiteede_sildid":
         for (let i = 0; i < 8; i++) {
           images.push(
             <img
@@ -56,9 +56,27 @@ function App() {
         }
         return (
           <div className={"A4Paper"}>
-            <div className={"imagesContainerTeabags"}>{images}</div>
+            <div className={"pakiteede_sildid"}>{images}</div>
           </div>
         );
+
+      case "leilikokteilid_hingamissegud_siirupid":
+        for (let i = 0; i < 16; i++) {
+          images.push(
+              <img
+                  key={i}
+                  src={selectedImage}
+                  alt="Valitud on ebasobiv fail või jäi fail valimata!"
+                  style={{ height: "52.25mm", width: "74.25mm" }}
+              />
+          );
+        }
+        return (
+            <div className={"A4Paper"}>
+              <div className={"leilikokteilid_hingamissegud_siirupid"}>{images}</div>
+            </div>
+        );
+
       default:
         return null;
     }
@@ -110,10 +128,11 @@ function App() {
                 id={"optionSelect"}
                 onChange={handleSelectChange}
               >
-                <option value="tagumised_sildid">
-                  Teepakkide tagumised sildid
+                <option value="teekottide_tagumised_sildid">
+                  Teekottide tagumised sildid ja puumahlad
                 </option>
-                <option value="teekottide_sildid">Teekottide sildid</option>
+                <option value="pakiteede_sildid">Pakiteede sildid</option>
+                <option value="leilikokteilid_hingamissegud_siirupid">Leilikokteilid, hingamissegud ja siirupid</option>
               </select>
             </div>
             <div>
@@ -135,7 +154,7 @@ function App() {
         {uploadClicked && <RenderImages />}
       </div>
       <footer>
-        <p>&copy; Copyright Tanel Märjama 2023</p>
+        <p>&copy; Copyright Tanel Märjama</p>
       </footer>
     </div>
   );

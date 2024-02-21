@@ -53,12 +53,12 @@ option {
   margin: 4em;
 }
 
-.imagesContainer {
+.teekottide_tagumised_sildid, .leilikokteilid_hingamissegud_siirupid {
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
 
-.imagesContainerTeabags {
+.pakiteede_sildid {
   display: grid;
   grid-template-columns: auto auto;
 }
